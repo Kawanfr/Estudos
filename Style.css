@@ -1,0 +1,132 @@
+body { 
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff; /* Branco muito claro */
+    color: #333; /* Cinza escuro */
+    font-size: 16px;
+}
+
+header {
+    background-image: url('Imagens/1.jpg'); /* Imagem de fundo */
+    background-repeat: no-repeat; /* Não repetir a imagem */
+    background-position: center 45%; /* Centralizar a imagem */
+    background-size: cover; /* Cobrir todo o header */
+
+    background-color: #e70fb8; /* Rosa bem escuro */
+    color: rgb #020202; /* Preto */
+    padding: 20px 0;
+    text-align: center;
+}
+
+h1, h2 {
+    color: #e91e63; /* Rosa escuro*/
+}
+
+main {
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: rgb #fdfdfd; /* Branco */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra leve */
+}
+
+section {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #000000; /*preto*/
+}
+
+section:last-child {
+    border-bottom: none;
+}
+
+ul, li {
+    /* list-style: ;style: none; */ /* Remove os marcadores da lista */
+    /* padding-left: 0; */ /* Remove o recuo da lista */
+    background-color: #fdcff3; /*Rosa bem claro*/
+    margin-bottom: 5px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+form {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #fce4ec; /*Rosa bem claro*/
+    border-radius: 8px;
+}
+
+input[type="tel"],
+input[type="text"],
+input[type="email"],
+textarea {
+    box-sizing: border-box; /* Inclui o padding e a borda no tamanho total do elemento */
+    width: calc 100%; /* Ocupando 100% do espaço disponível */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #080808; /*preto*/
+    border-radius: 5px;
+}
+
+/*Adicionar input[type="tel"] se você o usa no HTML e que o mesmo estilo */
+
+button {
+    background-color: #e91e63; /* Rosa escuro */
+    color: rgb(0, 0, 0);
+    padding: 10px 15px;
+    border: none; /* Remove a borda padrão */
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color:#c2185b; /* Rosa mais claro */
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color:#000000; /*preto*/
+    color: rgb(255, 255, 255); /*branco*/
+    margin-top: 20px;
+}
+
+#MensagemRetorno {
+    color: green; /* Verde */
+}
+
+.galeria-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.galeria-imagem {
+    width: calc(50% - 10px);
+    max-width: 200px;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.depoimento {
+    background-color: #fff9c4;
+    border-left: 5px solid #fbc02d;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 0 5px 5px 0;
+
+}
+
+.depoimento cite{
+    display: block;
+    text-align: right;
+    margin-top: 10px;
+    font-style: italic;
+    color: #555;
+}
