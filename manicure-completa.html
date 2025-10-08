@@ -3,20 +3,37 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Manicure Completa - Espaço Ceh Nunes<</title>
+        <title>Manicure Completa - Espaço Ceh Nunes</title>
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="Style.css"> <!-- link para o mesmo css -->
+        <link rel="stylesheet" href="mobile.css">
     </head>
    
     <body>
+        <div id="weather-widget"></div>
+        <nav class="side-nav">
+            <ul>
+                <li><a href="Manicure.html#sobre-nos">Sobre</a></li>
+                <li><a href="Manicure.html#serviços">Serviços</a></li>
+                <li><a href="Manicure.html#contato">Contato</a></li>
+                <li><a href="Manicure.html#Depoimentos">Depoimentos</a></li>
+                <li><a href="Manicure.html#galeria">Galeria</a></li>
+                <li><a href="https://www.google.com/maps/search/?api=1&query=Avenida+Dos+Ourives,+1001,+São+Paulo,+SP" target="_blank" rel="noopener noreferrer">Como chegar</a></li>
+            </ul>
+        </nav>
+
         <header>
-            <h1>Espaço Ceh Nunes</h1>
-            <p>Detalhes sobre Manicure Completa</p>
+            <h1 class="sr-only">Espaço Ceh Nunes</h1>
+            <p class="sr-only">Detalhes sobre Manicure Completa</p>
         </header>
 
         <main>
             <section id="Detalhe-serviço">
                 <h2>Manicure completa</h2>
-                <img src="Imagens/manicure-completa.jpg" alt="Exemplo de Manicure Completa" style="width:100%; max-width:400px; display:block; margin:10px auto;"> <!-- Opcional: Adicione uma imagem Específica -->
+                <img src="Imagens/manicure-completa.jpg" alt="Exemplo de Manicure Completa" class="imagem-servico">
                 <p>Nossa manicure completa é um tratamento de luxo para suas mãos. Começamos com a remoção cuidadosa de cutículas, seguida pelo lixamento preciso para dar forma às suas unhas. Aplicamos um hidratante especial para nutrir a pele e finalizamos com a esmaltação da sua cor preferida, utilizando produtos de alta durabilidade e brilho.</p>
                 <p><strong> O que está incluso:</strong></p>
                 
@@ -33,7 +50,9 @@
         </main>
 
         <footer>
-            <p>&copy; 2025 Espaço Ceh Nunes. Todos os direitos reservados.</p>
+            <p>&copy; <span id="ano-corrente"></span> Espaço Ceh Nunes. Todos os direitos reservados.</p>
         </footer>
+
+        <script src="Script.js" defer></script>
     </body>
 </html>

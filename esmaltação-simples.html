@@ -4,18 +4,35 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Esmaltação Simples - Espaço Ceh Nunes</title>
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="Style.css">
+        <link rel="stylesheet" href="mobile.css">
     </head>
     <body>
+        <div id="weather-widget"></div>
+        <nav class="side-nav">
+            <ul>
+                <li><a href="Manicure.html#sobre-nos">Sobre</a></li>
+                <li><a href="Manicure.html#serviços">Serviços</a></li>
+                <li><a href="Manicure.html#contato">Contato</a></li>
+                <li><a href="Manicure.html#Depoimentos">Depoimentos</a></li>
+                <li><a href="Manicure.html#galeria">Galeria</a></li>
+                <li><a href="https://www.google.com/maps/search/?api=1&query=Avenida+Dos+Ourives,+1001,+São+Paulo,+SP" target="_blank" rel="noopener noreferrer">Como chegar</a></li>
+            </ul>
+        </nav>
+
         <header>
-            <h1>Espaço Ceh Nunes</h1>
-            <p>Detalhes sobre Esmaltação Simples</p>
+            <h1 class="sr-only">Espaço Ceh Nunes</h1>
+            <p class="sr-only">Detalhes sobre Esmaltação Simples</p>
         </header>
 
         <main>
             <section id="detalhe-serviço">
                 <h2>Esmaltação Simples</h2>
-                <img src="Imagens/esmaltação-simples.jpg" alt="Exemplo de Esmaltação Simples" style="width:100%; max-width:400px; display:block; margin:10px auto;">
+                <img src="Imagens/esmaltação-simples.jpg" alt="Exemplo de Esmaltação Simples" class="imagem-servico">
                 <p>Para quem busca unhas impecáveis rapidamente, nossa esmaltação simples é a escolha perfeita. Preparamos suas unhas e aplicamos duas camadas do seu esmalte preferido, garantindo uma cobertura uniforme e um brilho espetacular.</p>
                 <p><strong>O que está incluso:</strong></p>
 
@@ -27,12 +44,15 @@
                 </ul>
                 <p>Ideal para manter suas unhas sempre lindas e coloridas.</p>
                 <br>
-                <a href="Manicure.html">Voltar a página inicial</a>
+                <a href="Manicure.html">Voltar para a página inicial</a>
             </section>
         </main>
 
         <footer>
-            <p>&copy; 2025 Espaço Ceh Nunes. Todos os direitos reservados.</p>
+            <p>&copy; <span id="ano-corrente"></span> Espaço Ceh Nunes. Todos os direitos reservados.</p>
         </footer>
+
+        <script src="Script.js" defer></script>
+
     </body>
 </html>

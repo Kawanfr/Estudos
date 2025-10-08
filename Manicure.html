@@ -5,21 +5,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Espaço Ceh Nunes</title>
-    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="mobile.css">
 
   </head>
-<body>
+<body class="pagina-principal">
+        <div id="weather-widget"></div>
+
+    <nav class="side-nav">
+        <ul>
+            <li><a href="#sobre-nos">Sobre</a></li>
+            <li><a href="#serviços">Serviços</a></li>
+            <li><a href="#contato">Contato</a></li>
+            <li><a href="#Depoimentos">Depoimentos</a></li>
+            <li><a href="#galeria">Galeria</a></li>
+            <li><a href="https://www.google.com/maps/search/?api=1&query=Avenida+Dos+Ourives,+1001,+São+Paulo,+SP" target="_blank" rel="noopener noreferrer">Como chegar</a></li>
+        </ul>
+    </nav>
 
       <header>
         <!-- Sugestão: Adicionar um logo aqui, se tiver -->
-        <!-- <img src="caminho/para/seu-logo.jpg" alt="Logo Espaço Ceh Nunes" style="width: 100px; height: auto;"> -->
+        <!-- <img src="Imagens" alt="Logo Espaço Ceh Nunes" style="width: 100px; height: auto;"> -->
 
-        <h1>Espaço Ceh Nunes</h1>
-        <p> Seu espaço para unhas incríveis</p>
       </header>
 
 <main>
-    <section id="Sobre-nós">
+    <section id="sobre-nos">
         <h2>Sobre nós</h2>
         <p>Bem-vinda ao espaço Ceh Nunes! Aqui, cada detalhe é pensado para proporcionar a você uma experiência única e relaxante. Nossa missão é realçar a beleza das suas unhas com serviços de alta qualidade e um atendimento personalizado.</p>
         <p>Com anos de experiência, nossa equipe é apaixonada por beleza e bem-estar. Utilizamos apenas produtos de alta qualidade e seguimos as melhores práticas de higiene para garantir a sua segurança e satisfação.</p>
@@ -41,7 +56,7 @@
 
                 <li>
                     <strong><a href="esmaltação-simples.html">Esmaltação simples</a></strong>
-                    <p>Aplicação de esmalte de alta qualidade para unhas perfeitas e com brilho duradouro</p>
+                    <p>Aplicação de esmalte de alta qualidade para unhas perfeitas e com brilho duradouro.</p>
                 </li>
              </ul>
         </section>
@@ -49,43 +64,58 @@
         <section id="contato">
             <h2>Contato</h2>
                 <p>Entre em contato para agendar seu horário</p>
-                <p>Whatsapp: <a href="https://wa.me/5511951148678" target="_blank" rel="noopener noreferrer">(11) 95114-8678</a></p>
-                <p>Instagram: <a href="https://www.instagram.com/ceh_nunes?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">@ceh_nunes</a></p>
+                <p> <a href="https://wa.me/5511951148678" target="_blank" rel="noopener noreferrer">Whatsapp</a></p>
+                <p> <a href="https://www.instagram.com/ceh_nunes?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">@ceh_nunes</a></p>
     <form id="formulario-contato">
 
         <h3>Agende seu horário</h3>
-           <label for="nome">Nome Completo:</label><br>
-            <input type="text" id="nome" name="nome" placeholder="Nome completo" required><br>
-
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email" placeholder="Digite seu email" required><br>
-
-            <label for="telefone">Telefone:</label><br>
-            <input type="tel" id="telefone" name="telefone" placeholder="Digite seu telefone" required><br>
-
-            <label for="mensagem">Serviços que irá fazer:</label><br>
-            <textarea id="mensagem" name="mensagem" rows="4" placeholder="Ex: Esmaltação completa" required></textarea><br>
-
+            <div class="form-group">
+                <label for="nome">Nome Completo:</label>
+                <input type="text" id="nome" name="nome" placeholder="Nome completo" required>
+                <div class="error-message" id="error-nome"></div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Digite seu email" required>
+                <div class="error-message" id="error-email"></div>
+            </div>
+            <div class="form-group">
+                <label for="telefone">Telefone:</label>
+                <input type="tel" id="telefone" name="telefone" placeholder="Apenas números (Ex: 11987654321)" required>
+                <div class="error-message" id="error-telefone"></div>
+            </div>
+            <div class="form-group">
+                <label for="mensagem">Serviços que irá fazer:</label>
+                <textarea id="mensagem" name="mensagem" rows="4" placeholder="Ex: Esmaltação completa" required></textarea>
+                <div class="error-message" id="error-mensagem"></div>
+            </div>
             <button type="submit">Agendar</button>
-    </form>
             <p id="MensagemRetorno" style="display: none;"></p>
+    </form>
         </section>
-</main>
 
 <section id="Depoimentos">
-    <h3>O que nossos clientes dizem:</h3>
-     <div class="depoimentos">
+    <h2>O que nossos clientes dizem:</h2>
+     <div class="depoimento">
         <p>"Amei o atendimento e minhas unhas ficaram perfeitas! super recomendo o Espaço Ceh Nunes."</p>
-        <cite>- Cliente Satisfeita</cite>
+        <cite>- Marina Silva</cite>
      </div>
-        <div class="depoimentos">
-            <p>"Melhor manicure que já conheci! Profissionalismo e carinho em cada detalhe."</p>
-            <cite>- Cliente Feliz</cite>
-        </div>
+     <div class="depoimento">
+        <p>"Melhor manicure que já conheci! Profissionalismo e carinho em cada detalhe."</p>
+        <cite>- Bruna Oliveira</cite>
+     </div>
+     <div class="depoimento">
+        <p>"Meus pés nunca estiveram tão bem cuidados. A pedicure completa foi uma experiência incrível!"</p>
+        <cite>- Ana Costa</cite>
+     </div>   
+     <div class="depoimento">
+        <p>"Serviço excelente e ambiente super acolhedor. Saí de lá me sentindo renovada!"</p>
+        <cite>- Carla Mendes</cite>
+     </div>   
 </section>
 
 <section id="galeria">
-    <h3>Galeria de fotos do nosso trabalho:</h3>
+    <h2>Galeria de fotos do nosso trabalho:</h2>
     <div class="galeria-container">
         <img src="Imagens/galeria1.jpeg" alt="Unhas decoradas" class="galeria-imagem">
         <img src="Imagens/galeria2.jpeg" alt="Unhas com esmaltação simples" class="galeria-imagem">
@@ -98,14 +128,13 @@
         <img src="Imagens/galeria9.jpeg" alt="Unhas com pedicure completa" class="galeria-imagem">
         <img src="Imagens/galeria10.jpeg" alt="Unhas com manicure completa" class="galeria-imagem">
     </div>
-</section>    
-
-
+</section>
+</main>
     <footer>
-        <p>&copy; 2025 Espaço Ceh Nunes. Todos os direitos reservados.</p> <!-- Sugestão: Atualizar para o ano corrente  -->
+        <p>&copy; <span id="ano-corrente"></span> Espaço Ceh Nunes. Todos os direitos reservados.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="Script.js" defer></script>
 
 </body>
 

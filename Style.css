@@ -1,101 +1,172 @@
+/* --- Variáveis de Cor (Tema) --- */
+:root {
+    --cor-primaria: #e91e63;
+    --cor-primaria-hover: #c2185b;
+    --cor-fundo: #fffefe;
+    --cor-texto: #050505;
+    --cor-fundo-lista: #fdcff3;
+    --cor-fundo-form: #fce4ec;
+    --cor-erro: #d32f2f;
+    --cor-sucesso: #2e7d32;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Montserrat', sans-serif;
+}
+
 body { 
-    font-family: sans-serif;
+    font-family: var(--font-body);
     margin: 0;
     padding: 0;
-    background-color: #ffffff; /* Branco muito claro */
-    color: #333; /* Cinza escuro */
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto); 
     font-size: 16px;
+    transition: padding-left 0.3s ease; /* Adiciona transição suave */
 }
 
 header {
-    background-image: url('Imagens/1.jpg'); /* Imagem de fundo */
+    background-image: url('Imagens/Espaçoceh.png'); /* Imagem de fundo */
     background-repeat: no-repeat; /* Não repetir a imagem */
-    background-position: center 45%; /* Centralizar a imagem */
-    background-size: cover; /* Cobrir todo o header */
-
-    background-color: #e70fb8; /* Rosa bem escuro */
-    color: rgb #020202; /* Preto */
-    padding: 20px 0;
+    background-position: center; /* Centralizar a imagem */
+    background-size: contain; /* Garante que a imagem inteira seja visível */
+    color:#020202; /* Preto */
+    padding: 10px 0; /* Reduz um pouco o padding vertical */
     text-align: center;
+    min-height: 250px; /* Define uma altura mínima para o cabeçalho */
 }
 
+
+
 h1, h2 {
-    color: #e91e63; /* Rosa escuro*/
+    color: var(--cor-primaria);
+    font-family: var(--font-heading);
 }
 
 main {
     padding: 20px;
     max-width: 800px;
     margin: 20px auto;
-    background-color: rgb #fdfdfd; /* Branco */
+    background-color:#ffffff; /* Branco */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra leve */
 }
 
 section {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     padding-bottom: 20px;
-    border-bottom: 1px solid #000000; /*preto*/
+    border-bottom: 1px solid #eee;
 }
 
 section:last-child {
     border-bottom: none;
 }
 
-ul, li {
-    /* list-style: ;style: none; */ /* Remove os marcadores da lista */
-    /* padding-left: 0; */ /* Remove o recuo da lista */
-    background-color: #fdcff3; /*Rosa bem claro*/
+/* Estilo geral para links dentro do conteúdo principal */
+main a {
+    color: var(--cor-primaria);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+main a:hover {
+    color: var(--cor-primaria-hover);
+    text-decoration: underline;
+}
+
+/* Estilo aplicado apenas à lista dentro da seção de serviços */
+#serviços ul li {
+    list-style-type: none; /* Remove os marcadores da lista */
+    padding-left: 0; /* Remove o padding padrão */
+    background-color: var(--cor-fundo-lista);
     margin-bottom: 5px;
     padding: 10px;
+    padding-left: 20px;
     border-radius: 5px;
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+
+#serviços ul li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 form {
     margin-top: 20px;
     padding: 15px;
-    background-color: #fce4ec; /*Rosa bem claro*/
+    background-color: var(--cor-fundo-form);
     border-radius: 8px;
 }
+
+.form-group {
+    margin-bottom: 15px; /* Adiciona espaço abaixo de cada grupo de label/input */
+}
+
+/* --- Estilos para Validação de Formulário --- */
+.error-message {
+    color: var(--cor-erro);
+    font-size: 0.9em;
+    min-height: 1.2em; /* Garante que o layout não pule quando a mensagem aparece */
+    margin-top: 4px;
+}
+
+input.input-error,
+textarea.input-error {
+    border-color: var(--cor-erro);
+    background-color: #ffebee; /* Fundo rosa muito claro */
+}
+
+.success-message {
+    color: var(--cor-sucesso);
+    background-color: #e8f5e9;
+    border: 1px solid var(--cor-sucesso);
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+/* --- Fim dos Estilos de Validação --- */
 
 input[type="tel"],
 input[type="text"],
 input[type="email"],
 textarea {
     box-sizing: border-box; /* Inclui o padding e a borda no tamanho total do elemento */
-    width: calc 100%; /* Ocupando 100% do espaço disponível */
+    width: 100%; /* Ocupando 100% do espaço disponível */
     padding: 10px;
     margin-bottom: 10px;
-    border: 1px solid #080808; /*preto*/
+    border: 1px solid #ccc; /* Borda mais suave */
     border-radius: 5px;
+    font-family: var(--font-body); /* Garante a fonte correta nos inputs */
+    transition: border-color 0.2s, box-shadow 0.2s;
 }
 
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 0 3px rgba(233, 30, 99, 0.15);
+}
 /*Adicionar input[type="tel"] se você o usa no HTML e que o mesmo estilo */
 
 button {
-    background-color: #e91e63; /* Rosa escuro */
-    color: rgb(0, 0, 0);
+    background-color: var(--cor-primaria);
+    color: rgb(255, 255, 255);
     padding: 10px 15px;
     border: none; /* Remove a borda padrão */
     border-radius: 40px;
     cursor: pointer;
-    font-size: 13px;
-    transition: background-color 0.3s ease;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 button:hover {
-    background-color:#c2185b; /* Rosa mais claro */
+    background-color: var(--cor-primaria-hover);
+    transform: translateY(-2px);
 }
 
 footer {
     text-align: center;
     padding: 20px 0;
-    background-color:#000000; /*preto*/
+    background-color: #333; /* Cinza escuro para um contraste menor */
     color: rgb(255, 255, 255); /*branco*/
     margin-top: 20px;
-}
-
-#MensagemRetorno {
-    color: green; /* Verde */
 }
 
 .galeria-container {
@@ -106,27 +177,280 @@ footer {
     margin-top: 20px;
 }
 
+/* Classe para imagens nas páginas de detalhes de serviço */
+.imagem-servico {
+    width: 100%;
+    max-width: 400px;
+    display: block;
+    margin: 20px auto;
+    border-radius: 8px;
+}
+
 .galeria-imagem {
-    width: calc(50% - 10px);
+    width: calc(33.333% - 10px);
     max-width: 200px;
-    height: auto;
+    height: 200px;
+    object-fit: cover;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+/* Efeito de zoom na imagem */
+.galeria-imagem:hover {
+    transform: scale(1.1); /* Aumenta a imagem ao passar o mouse */
+    position: relative; /* Para manter a imagem no topo */
+    z-index: 10; /* Garante que a imagem aumentada fique acima das outras */
+}
+
+/* Estilo para o Lightbox */
+
+/* O fundo escuro (overlay) */
+.lightbox-overlay {
+    position: fixed; /* Fica fixo na tela */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ocupa toda a largura da tela */
+    height: 100%; /* Ocupa toda a altura da tela */
+    background: rgba(0, 0, 0, 0.8); /* Fundo preto */
+    display: none; /* Inicialmente escondido */
+    justify-content: center; /* Centraliza o conteúdo */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    z-index: 1000; /* Fica acima de outros elementos */
+}
+/* Classe para mostrar o lightbox */
+.lightbox-overlay.active {
+    display: flex; /* Exibe o overlay */
+}
+
+/* A imagem dentro do Lightbox */
+.lightbox-imagem {
+    max-width: 90%; /* Limita a largura máxima da imagem */
+    max-height: 80vh; /* Limita a altura máxima da imagem */
+    box-shadow: 0 0 25px rgba(0,0,0,0.5); /* Sombra ao redo da imagem */
+}
+
+/* O botão "x" para fechar o lightbox */
+.lightbox-close {
+    position: absolute; /* Fica posicionado no canto */
+    top: 20px; /* Distancia do topo */
+    right: 30px; /*  distancia da direira */
+    font-size: 40px; /* Tamanho do botão */
+    color: #fff; /* cora branca */
+    cursor: pointer; /* Muda o cursir para pointer */;
+    transition: color 0.2s ease; /* transição suave de cor */
 }
 
 .depoimento {
-    background-color: #fff9c4;
-    border-left: 5px solid #fbc02d;
+    background-color: #f9f9f9; /* Fundo neutro e elegante */
+    border-left: 4px solid var(--cor-primaria); /* Harmoniza com o tema */
     padding: 15px;
+    padding-left: 25px;
     margin-bottom: 15px;
     border-radius: 0 5px 5px 0;
+    position: relative;
+}
 
+/* Adiciona aspas decorativas para um visual profissional */
+.depoimento p::before {
+    content: '“';
+    font-family: var(--font-heading);
+    font-size: 4em;
+    color: var(--cor-primaria);
+    opacity: 0.1;
+    position: absolute;
+    top: -10px;
+    left: 10px;
 }
 
 .depoimento cite{
     display: block;
     text-align: right;
-    margin-top: 10px;
+    margin-top: 15px;
     font-style: italic;
     color: #555;
+}
+
+/* 
+  Classe para esconder conteúdo visualmente, mas mantê-lo acessível para leitores de tela.
+  Ideal para o texto do header que descreve a imagem de fundo.
+*/
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* --- Animação de Surgimento ao Rolar (Scroll Reveal) --- */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.7s ease-out;
+}
+
+.reveal-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Estilos para o Widget de Clima --- */
+#weather-widget {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    width: 220px;
+    padding: 15px;
+    background-color: var(--cor-fundo-form);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    z-index: 1001; /* Acima do menu lateral e do lightbox */
+    font-size: 0.9em;
+    color: var(--cor-texto);
+    opacity: 0;
+    transform: translateY(-30px); /* Aumenta a distância para um efeito mais claro */
+    display: none;
+    /* Transição mais suave com efeito de desaceleração no final */
+    transition: opacity 0.6s cubic-bezier(0.23, 1, 0.32, 1), transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+#weather-widget.visible {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#weather-widget p {
+    margin: 0 0 8px 0;
+}
+
+#weather-widget p:last-child {
+    margin-bottom: 0;
+    font-style: italic;
+    color: var(--cor-primaria);
+    font-weight: bold;
+}
+
+#weather-widget .weather-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#weather-widget .weather-info img {
+    width: 40px;
+    height: 40px;
+}
+
+/* --- Estilos para Responsividade (Telas Menores) --- */
+
+/* Para telas de até 768px (tablets) */
+@media (max-width: 768px) {
+    .galeria-imagem {
+        /* A galeria passa a ter 2 colunas */
+        width: calc(50% - 10px);
+    }
+
+    main {
+        padding: 15px;
+    }
+}
+
+/* Para telas de até 480px (celulares) */
+@media (max-width: 480px) {
+    #weather-widget {
+        width: auto;
+        left: 10px;
+        right: 10px;
+        font-size: 0.85em;
+    }
+
+    .galeria-imagem {
+        /* A galeria passa a ter 1 coluna, ocupando toda a largura */
+        width: 100%;
+        max-width: none; /* Remove a largura máxima para que a imagem possa crescer */
+    }
+
+    body {
+        font-size: 15px;
+    }
+}
+
+/* --- Estilos para o Menu Lateral Fixo --- */
+.side-nav {
+    position: fixed; /* Fixo na tela */
+    left: 0;
+    top: 0;
+    width: 200px; /* Largura do menu */
+    height: 100vh; /* Altura total da tela */
+    background-color: #333; /* Mesma cor do rodapé para consistência */
+    padding-top: 40px; /* Espaço no topo */
+    z-index: 900; /* Abaixo do lightbox, mas acima do resto */
+    box-shadow: 3px 0 8px rgba(0,0,0,0.2);
+    transform: translateX(0);
+    transition: transform 0.3s ease;
+}
+
+.side-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.side-nav ul li a {
+    display: block;
+    padding: 15px 25px;
+    color: #f0f0f0;
+    text-decoration: none;
+    font-family: var(--font-body);
+    font-weight: bold;
+    transition: background-color 0.3s, padding-left 0.3s;
+    border-bottom: 1px solid #444;
+    position: relative;
+    overflow: hidden;
+}
+
+.side-nav ul li a::before {
+    content: '🖌️';
+    position: absolute;
+    left: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: left 0.3s ease;
+}
+
+.side-nav ul li:first-child a {
+    border-top: 1px solid #444;
+}
+
+.side-nav ul li a:hover {
+    background-color: var(--cor-primaria);
+    padding-left: 35px; /* Efeito de deslocamento no hover */
+    color: #fff;
+}
+
+.side-nav ul li a:hover::before {
+    left: 10px;
+}
+
+/* Ajusta o conteúdo principal quando o menu lateral está visível */
+body.nav-visible {
+    padding-left: 200px; /* Mesma largura do menu lateral */
+}
+
+/* Esconde o menu em telas menores */
+@media (max-width: 1024px) {
+    .side-nav {
+        transform: translateX(-100%); /* Esconde o menu para fora da tela */
+    }
+    body.nav-visible {
+        padding-left: 0; /* Remove o espaçamento do corpo */
+    }
 }

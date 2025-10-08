@@ -4,18 +4,35 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Pedicure Completa - Espaço Ceh Nunes</title>
-        <link rel="stylesheet" href="style.css"> 
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="Style.css"> 
+        <link rel="stylesheet" href="mobile.css">
     </head>
     <body>
+        <div id="weather-widget"></div>
+        <nav class="side-nav">
+            <ul>
+                <li><a href="Manicure.html#sobre-nos">Sobre</a></li>
+                <li><a href="Manicure.html#serviços">Serviços</a></li>
+                <li><a href="Manicure.html#contato">Contato</a></li>
+                <li><a href="Manicure.html#Depoimentos">Depoimentos</a></li>
+                <li><a href="Manicure.html#galeria">Galeria</a></li>
+                <li><a href="https://www.google.com/maps/search/?api=1&query=Avenida+Dos+Ourives,+1001,+São+Paulo,+SP" target="_blank" rel="noopener noreferrer">Como chegar</a></li>
+            </ul>
+        </nav>
+
         <header>
-            <h1>Espaço Ceh Nunes</h1>
-            <p>Detalhes sobre Pedicure Completa</p>
+            <h1 class="sr-only">Espaço Ceh Nunes</h1>
+            <p class="sr-only">Detalhes sobre Pedicure Completa</p>
         </header>
 
         <main>
             <section id="detalhe-serviço">
                 <h2>Pedicure Completa</h2>
-                <img src="Imagens/pedicure-completa.jpg" alt="Exemplo de Pedicure Completa" style="width:100%; max-width:400px; display:block; margin:10px auto;">
+                <img src="Imagens/pedicure-completa.jpg" alt="Exemplo de Pedicure Completa" class="imagem-servico">
                 <p>Relaxe e revitalize sues pés com nossa pedicure completa. Este serviço inclui a remoção de cutículas, lixamento das unhas e calosidades, uma esfoliação suave para remover células mortas, hidratação profunda e, para finalizar, a esmaltação com a cor da sua preferência.</p>
                 <p><strong>O que está incluso:</strong></p>
 
@@ -35,7 +52,10 @@
         </main>
 
         <footer>
-            <p>&copy; 2025 Espaço Ceh Nunes. Todos os direitos reservados.</p>
+            <p>&copy; <span id="ano-corrente"></span> Espaço Ceh Nunes. Todos os direitos reservados.</p>
         </footer>
+
+        <script src="Script.js" defer></script>
+
     </body>
 </html>
