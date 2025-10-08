@@ -10,6 +10,32 @@
     --cor-sucesso: #2e7d32;
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Montserrat', sans-serif;
+
+    /* Novas variáveis para theming */
+    --cor-fundo-conteudo: #ffffff;
+    --cor-fundo-rodape: #333;
+    --cor-texto-botao: #ffffff;
+    --cor-sombra: rgba(0, 0, 0, 0.1);
+    --cor-borda: #eee;
+    --cor-borda-input: #ccc;
+    --cor-nav-texto: #f0f0f0;
+    --cor-nav-fundo-hover: var(--cor-primaria);
+    --cor-nav-borda: #444;
+}
+
+body.dark-mode {
+    --cor-fundo: #1a1a1a;
+    --cor-texto: #f0f0f0;
+    --cor-fundo-lista: #2c2c2c;
+    --cor-fundo-form: #252525;
+    --cor-fundo-conteudo: #252525;
+    --cor-fundo-rodape: #1f1f1f;
+    --cor-sombra: rgba(255, 255, 255, 0.08);
+    --cor-borda: #3a3a3a;
+    --cor-borda-input: #555;
+    --cor-nav-texto: #f0f0f0;
+    --cor-nav-fundo-hover: var(--cor-primaria);
+    --cor-nav-borda: #3a3a3a;
 }
 
 body { 
@@ -19,21 +45,19 @@ body {
     background-color: var(--cor-fundo);
     color: var(--cor-texto); 
     font-size: 16px;
-    transition: padding-left 0.3s ease; /* Adiciona transição suave */
+    transition: padding-left 0.3s ease, background-color 0.3s, color 0.3s;
 }
 
 header {
-    background-image: url('Imagens/Espaçoceh.png'); /* Imagem de fundo */
-    background-repeat: no-repeat; /* Não repetir a imagem */
-    background-position: center; /* Centralizar a imagem */
-    background-size: contain; /* Garante que a imagem inteira seja visível */
-    color:#020202; /* Preto */
-    padding: 10px 0; /* Reduz um pouco o padding vertical */
+    background-image: url('Imagens/Espaçoceh.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    color: var(--cor-texto);
+    padding: 10px 0;
     text-align: center;
-    min-height: 250px; /* Define uma altura mínima para o cabeçalho */
+    min-height: 250px;
 }
-
-
 
 h1, h2 {
     color: var(--cor-primaria);
@@ -44,21 +68,21 @@ main {
     padding: 20px;
     max-width: 800px;
     margin: 20px auto;
-    background-color:#ffffff; /* Branco */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    background-color: var(--cor-fundo-conteudo);
+    box-shadow: 0 0 10px var(--cor-sombra);
+    transition: background-color 0.3s;
 }
 
 section {
     margin-bottom: 20px;
     padding-bottom: 20px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--cor-borda);
 }
 
 section:last-child {
     border-bottom: none;
 }
 
-/* Estilo geral para links dentro do conteúdo principal */
 main a {
     color: var(--cor-primaria);
     text-decoration: none;
@@ -70,21 +94,20 @@ main a:hover {
     text-decoration: underline;
 }
 
-/* Estilo aplicado apenas à lista dentro da seção de serviços */
 #serviços ul li {
-    list-style-type: none; /* Remove os marcadores da lista */
-    padding-left: 0; /* Remove o padding padrão */
+    list-style-type: none;
+    padding-left: 0;
     background-color: var(--cor-fundo-lista);
     margin-bottom: 5px;
     padding: 10px;
     padding-left: 20px;
     border-radius: 5px;
-    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out, background-color 0.3s;
 }
 
 #serviços ul li:hover {
     transform: translateY(-3px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px var(--cor-sombra);
 }
 
 form {
@@ -92,48 +115,49 @@ form {
     padding: 15px;
     background-color: var(--cor-fundo-form);
     border-radius: 8px;
+    transition: background-color 0.3s;
 }
 
 .form-group {
-    margin-bottom: 15px; /* Adiciona espaço abaixo de cada grupo de label/input */
+    margin-bottom: 15px;
 }
 
-/* --- Estilos para Validação de Formulário --- */
 .error-message {
     color: var(--cor-erro);
     font-size: 0.9em;
-    min-height: 1.2em; /* Garante que o layout não pule quando a mensagem aparece */
+    min-height: 1.2em;
     margin-top: 4px;
 }
 
 input.input-error,
 textarea.input-error {
     border-color: var(--cor-erro);
-    background-color: #ffebee; /* Fundo rosa muito claro */
+    background-color: #ffebee; /* Mantido por ser específico de erro */
 }
 
 .success-message {
     color: var(--cor-sucesso);
-    background-color: #e8f5e9;
+    background-color: #e8f5e9; /* Mantido por ser específico de sucesso */
     border: 1px solid var(--cor-sucesso);
     padding: 10px;
     border-radius: 5px;
     text-align: center;
 }
-/* --- Fim dos Estilos de Validação --- */
 
 input[type="tel"],
 input[type="text"],
 input[type="email"],
 textarea {
-    box-sizing: border-box; /* Inclui o padding e a borda no tamanho total do elemento */
-    width: 100%; /* Ocupando 100% do espaço disponível */
+    box-sizing: border-box;
+    width: 100%;
     padding: 10px;
     margin-bottom: 10px;
-    border: 1px solid #ccc; /* Borda mais suave */
+    border: 1px solid var(--cor-borda-input);
     border-radius: 5px;
-    font-family: var(--font-body); /* Garante a fonte correta nos inputs */
+    font-family: var(--font-body);
     transition: border-color 0.2s, box-shadow 0.2s;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
 }
 
 input:focus,
@@ -142,13 +166,12 @@ textarea:focus {
     border-color: var(--cor-primaria);
     box-shadow: 0 0 0 3px rgba(233, 30, 99, 0.15);
 }
-/*Adicionar input[type="tel"] se você o usa no HTML e que o mesmo estilo */
 
 button {
     background-color: var(--cor-primaria);
-    color: rgb(255, 255, 255);
+    color: var(--cor-texto-botao);
     padding: 10px 15px;
-    border: none; /* Remove a borda padrão */
+    border: none;
     border-radius: 40px;
     cursor: pointer;
     font-size: 14px;
@@ -164,9 +187,10 @@ button:hover {
 footer {
     text-align: center;
     padding: 20px 0;
-    background-color: #333; /* Cinza escuro para um contraste menor */
-    color: rgb(255, 255, 255); /*branco*/
+    background-color: var(--cor-fundo-rodape);
+    color: var(--cor-texto);
     margin-top: 20px;
+    transition: background-color 0.3s;
 }
 
 .galeria-container {
@@ -177,7 +201,6 @@ footer {
     margin-top: 20px;
 }
 
-/* Classe para imagens nas páginas de detalhes de serviço */
 .imagem-servico {
     width: 100%;
     max-width: 400px;
@@ -192,58 +215,51 @@ footer {
     height: 200px;
     object-fit: cover;
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px var(--cor-sombra);
     transition: transform 0.3s ease-in-out;
     cursor: pointer;
 }
-/* Efeito de zoom na imagem */
 .galeria-imagem:hover {
-    transform: scale(1.1); /* Aumenta a imagem ao passar o mouse */
-    position: relative; /* Para manter a imagem no topo */
-    z-index: 10; /* Garante que a imagem aumentada fique acima das outras */
+    transform: scale(1.1);
+    position: relative;
+    z-index: 10;
 }
 
-/* Estilo para o Lightbox */
-
-/* O fundo escuro (overlay) */
 .lightbox-overlay {
-    position: fixed; /* Fica fixo na tela */
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100%; /* Ocupa toda a largura da tela */
-    height: 100%; /* Ocupa toda a altura da tela */
-    background: rgba(0, 0, 0, 0.8); /* Fundo preto */
-    display: none; /* Inicialmente escondido */
-    justify-content: center; /* Centraliza o conteúdo */
-    align-items: center; /* Centraliza o conteúdo verticalmente */
-    z-index: 1000; /* Fica acima de outros elementos */
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
 }
-/* Classe para mostrar o lightbox */
 .lightbox-overlay.active {
-    display: flex; /* Exibe o overlay */
+    display: flex;
 }
 
-/* A imagem dentro do Lightbox */
 .lightbox-imagem {
-    max-width: 90%; /* Limita a largura máxima da imagem */
-    max-height: 80vh; /* Limita a altura máxima da imagem */
-    box-shadow: 0 0 25px rgba(0,0,0,0.5); /* Sombra ao redo da imagem */
+    max-width: 90%;
+    max-height: 80vh;
+    box-shadow: 0 0 25px rgba(0,0,0,0.5);
 }
 
-/* O botão "x" para fechar o lightbox */
 .lightbox-close {
-    position: absolute; /* Fica posicionado no canto */
-    top: 20px; /* Distancia do topo */
-    right: 30px; /*  distancia da direira */
-    font-size: 40px; /* Tamanho do botão */
-    color: #fff; /* cora branca */
-    cursor: pointer; /* Muda o cursir para pointer */;
-    transition: color 0.2s ease; /* transição suave de cor */
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: #fff;
+    cursor: pointer;
+    transition: color 0.2s ease;
 }
 
 .depoimento {
-    background-color: #f9f9f9; /* Fundo neutro e elegante */
-    border-left: 4px solid var(--cor-primaria); /* Harmoniza com o tema */
+    background-color: var(--cor-fundo-lista);
+    border-left: 4px solid var(--cor-primaria);
     padding: 15px;
     padding-left: 25px;
     margin-bottom: 15px;
@@ -251,7 +267,6 @@ footer {
     position: relative;
 }
 
-/* Adiciona aspas decorativas para um visual profissional */
 .depoimento p::before {
     content: '“';
     font-family: var(--font-heading);
@@ -271,10 +286,6 @@ footer {
     color: #555;
 }
 
-/* 
-  Classe para esconder conteúdo visualmente, mas mantê-lo acessível para leitores de tela.
-  Ideal para o texto do header que descreve a imagem de fundo.
-*/
 .sr-only {
     position: absolute;
     width: 1px;
@@ -287,7 +298,6 @@ footer {
     border-width: 0;
 }
 
-/* --- Animação de Surgimento ao Rolar (Scroll Reveal) --- */
 .reveal-on-scroll {
     opacity: 0;
     transform: translateY(40px);
@@ -299,7 +309,59 @@ footer {
     transform: translateY(0);
 }
 
-/* --- Estilos para o Widget de Clima --- */
+#blog .blog-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.blog-post {
+    background-color: var(--cor-fundo-conteudo);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px var(--cor-sombra);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-post:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px var(--cor-sombra);
+}
+
+.blog-post h3 {
+    font-family: var(--font-heading);
+    color: var(--cor-primaria);
+    margin-top: 0;
+    font-size: 1.4em;
+}
+
+.blog-post p {
+    flex-grow: 1;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.blog-post .leia-mais {
+    display: inline-block;
+    background-color: var(--cor-primaria);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    align-self: flex-start;
+    transition: background-color 0.3s;
+}
+
+.blog-post .leia-mais:hover {
+    background-color: var(--cor-primaria-hover);
+    color: white;
+    text-decoration: none;
+}
+
 #weather-widget {
     position: fixed;
     top: 15px;
@@ -308,15 +370,14 @@ footer {
     padding: 15px;
     background-color: var(--cor-fundo-form);
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-    z-index: 1001; /* Acima do menu lateral e do lightbox */
+    box-shadow: 0 4px 8px var(--cor-sombra);
+    z-index: 1001;
     font-size: 0.9em;
     color: var(--cor-texto);
     opacity: 0;
-    transform: translateY(-30px); /* Aumenta a distância para um efeito mais claro */
+    transform: translateY(-30px);
     display: none;
-    /* Transição mais suave com efeito de desaceleração no final */
-    transition: opacity 0.6s cubic-bezier(0.23, 1, 0.32, 1), transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: opacity 0.6s cubic-bezier(0.23, 1, 0.32, 1), transform 0.6s cubic-bezier(0.23, 1, 0.32, 1), background-color 0.3s;
 }
 
 #weather-widget.visible {
@@ -326,14 +387,7 @@ footer {
 }
 
 #weather-widget p {
-    margin: 0 0 8px 0;
-}
-
-#weather-widget p:last-child {
-    margin-bottom: 0;
-    font-style: italic;
-    color: var(--cor-primaria);
-    font-weight: bold;
+    display: none;
 }
 
 #weather-widget .weather-info {
@@ -349,12 +403,8 @@ footer {
     height: 40px;
 }
 
-/* --- Estilos para Responsividade (Telas Menores) --- */
-
-/* Para telas de até 768px (tablets) */
 @media (max-width: 768px) {
     .galeria-imagem {
-        /* A galeria passa a ter 2 colunas */
         width: calc(50% - 10px);
     }
 
@@ -363,7 +413,6 @@ footer {
     }
 }
 
-/* Para telas de até 480px (celulares) */
 @media (max-width: 480px) {
     #weather-widget {
         width: auto;
@@ -373,9 +422,8 @@ footer {
     }
 
     .galeria-imagem {
-        /* A galeria passa a ter 1 coluna, ocupando toda a largura */
         width: 100%;
-        max-width: none; /* Remove a largura máxima para que a imagem possa crescer */
+        max-width: none;
     }
 
     body {
@@ -383,19 +431,18 @@ footer {
     }
 }
 
-/* --- Estilos para o Menu Lateral Fixo --- */
 .side-nav {
-    position: fixed; /* Fixo na tela */
+    position: fixed;
     left: 0;
     top: 0;
-    width: 200px; /* Largura do menu */
-    height: 100vh; /* Altura total da tela */
-    background-color: #333; /* Mesma cor do rodapé para consistência */
-    padding-top: 40px; /* Espaço no topo */
-    z-index: 900; /* Abaixo do lightbox, mas acima do resto */
-    box-shadow: 3px 0 8px rgba(0,0,0,0.2);
+    width: 200px;
+    height: 100vh;
+    background-color: var(--cor-fundo-rodape);
+    padding-top: 40px;
+    z-index: 900;
+    box-shadow: 3px 0 8px var(--cor-sombra);
     transform: translateX(0);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s;
 }
 
 .side-nav ul {
@@ -407,12 +454,12 @@ footer {
 .side-nav ul li a {
     display: block;
     padding: 15px 25px;
-    color: #f0f0f0;
+    color: var(--cor-nav-texto);
     text-decoration: none;
     font-family: var(--font-body);
     font-weight: bold;
     transition: background-color 0.3s, padding-left 0.3s;
-    border-bottom: 1px solid #444;
+    border-bottom: 1px solid var(--cor-nav-borda);
     position: relative;
     overflow: hidden;
 }
@@ -427,25 +474,23 @@ footer {
 }
 
 .side-nav ul li:first-child a {
-    border-top: 1px solid #444;
+    border-top: 1px solid var(--cor-nav-borda);
 }
 
 .side-nav ul li a:hover {
-    background-color: var(--cor-primaria);
-    padding-left: 35px; /* Efeito de deslocamento no hover */
-    color: #fff;
+    background-color: var(--cor-nav-fundo-hover);
+    padding-left: 35px;
+    color: var(--cor-texto-botao);
 }
 
 .side-nav ul li a:hover::before {
     left: 10px;
 }
 
-/* Ajusta o conteúdo principal quando o menu lateral está visível */
 body.nav-visible {
-    padding-left: 200px; /* Mesma largura do menu lateral */
+    padding-left: 200px;
 }
 
-/* Esconde o menu em telas menores */
 @media (max-width: 1024px) {
     .side-nav {
         transform: translateX(-100%); /* Esconde o menu para fora da tela */
@@ -453,4 +498,79 @@ body.nav-visible {
     body.nav-visible {
         padding-left: 0; /* Remove o espaçamento do corpo */
     }
+}
+
+/* --- Estilos para o Interruptor de Tema --- */
+.theme-switcher-li {
+    padding: 10px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--cor-nav-texto);
+    border-bottom: 1px solid var(--cor-nav-borda);
+}
+
+.theme-switcher {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    justify-content: space-between;
+    font-family: var(--font-body);
+    font-weight: bold;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 28px;
+}
+
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #555;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: var(--cor-primaria);
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px var(--cor-primaria);
+}
+
+input:checked + .slider:before {
+    transform: translateX(22px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
 }

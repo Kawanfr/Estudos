@@ -252,4 +252,57 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Inicia a animação de scroll
     initScrollReveal();
+
+    // --- LÓGICA PARA O MENU HAMBÚRGUER ---
+    const hamburger = document.querySelector('.hamburger');
+    const sideNav = document.querySelector('.side-nav');
+    const closeNav = document.querySelector('.close-nav');
+
+    if (hamburger && sideNav && closeNav) {
+        hamburger.addEventListener('click', () => {
+            sideNav.classList.add('nav-active');
+        });
+
+        closeNav.addEventListener('click', () => {
+            sideNav.classList.remove('nav-active');
+        });
+    }
+
+    // --- LÓGICA PARA O SELETOR DE TEMA (DARK MODE) ---
+    const themeToggle = document.getElementById('theme-toggle');
+
+    // Adiciona o listener apenas se o interruptor existir
+    if (themeToggle) {
+        // Função para aplicar o tema salvo ou do sistema
+        const applyTheme = () => {
+            const savedTheme = localStorage.getItem('theme');
+            // Prioriza o tema salvo. Se não houver, usa a preferência do sistema.
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            
+            if (savedTheme === 'dark' || (savedTheme === null && prefersDark)) {
+                document.body.classList.add('dark-mode');
+                themeToggle.checked = true;
+            } else {
+                document.body.classList.remove('dark-mode');
+                themeToggle.checked = false;
+            }
+        };
+
+        // Função para salvar a preferência de tema
+        const saveThemePreference = () => {
+            localStorage.setItem('theme', themeToggle.checked ? 'dark' : 'light');
+        };
+        
+        // Aplica o tema ao carregar a página
+        applyTheme();
+
+        // Adiciona o evento de clique para trocar o tema
+        themeToggle.addEventListener('change', () => {
+            document.body.classList.toggle('dark-mode');
+            saveThemePreference();
+        });
+
+        // Ouve mudanças na preferência de tema do sistema operacional
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyTheme);
+    }
 });

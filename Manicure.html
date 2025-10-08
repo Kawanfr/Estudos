@@ -17,6 +17,7 @@
         <div id="weather-widget"></div>
 
     <nav class="side-nav">
+        <button class="close-nav">&times;</button>
         <ul>
             <li><a href="#sobre-nos">Sobre</a></li>
             <li><a href="#serviços">Serviços</a></li>
@@ -24,10 +25,22 @@
             <li><a href="#Depoimentos">Depoimentos</a></li>
             <li><a href="#galeria">Galeria</a></li>
             <li><a href="https://www.google.com/maps/search/?api=1&query=Avenida+Dos+Ourives,+1001,+São+Paulo,+SP" target="_blank" rel="noopener noreferrer">Como chegar</a></li>
+            <li class="theme-switcher-li">
+                <div class="theme-switcher">
+                    <span>Modo Escuro</span>
+                    <label class="switch">
+                        <input type="checkbox" id="theme-toggle">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </li>
         </ul>
     </nav>
 
       <header>
+        <div class="mobile-header">
+            <button class="hamburger">&#9776;</button>
+        </div>
         <!-- Sugestão: Adicionar um logo aqui, se tiver -->
         <!-- <img src="Imagens" alt="Logo Espaço Ceh Nunes" style="width: 100px; height: auto;"> -->
 
@@ -127,6 +140,27 @@
         <img src="Imagens/galeria8.jpeg" alt="Unhas com esmaltação simples" class="galeria-imagem">
         <img src="Imagens/galeria9.jpeg" alt="Unhas com pedicure completa" class="galeria-imagem">
         <img src="Imagens/galeria10.jpeg" alt="Unhas com manicure completa" class="galeria-imagem">
+    </div>
+</section>
+
+<section id="blog">
+    <h2>Dicas e Tendências</h2>
+    <div class="blog-container">
+        <article class="blog-post">
+            <h3>5 Dicas para Unhas Fortes e Saudáveis</h3>
+            <p>Manter as unhas fortes e saudáveis é mais fácil do que parece. Com alguns cuidados diários, você pode evitar que elas quebrem e descamem. Confira nossas dicas...</p>
+            <a href="blog-post-1.html" class="leia-mais">Leia Mais</a>
+        </article>
+        <article class="blog-post">
+            <h3>As Cores de Esmalte do Verão 2025</h3>
+            <p>O verão chegou com tudo e, com ele, novas tendências de cores para suas unhas. Dos tons vibrantes aos pastéis, descubra o que está em alta na estação mais quente do ano...</p>
+            <a href="blog-post-2.html" class="leia-mais">Leia Mais</a>
+        </article>
+        <article class="blog-post">
+            <h3>Nail Art: Inspirações para Você Arrasar</h3>
+            <p>Quer dar um up no visual das suas unhas? A nail art é a solução! Separamos algumas inspirações, das mais discretas às mais ousadas, para você se inspirar...</p>
+            <a href="blog-post-3.html" class="leia-mais">Leia Mais</a>
+        </article>
     </div>
 </section>
 </main>
