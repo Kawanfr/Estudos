@@ -24,4 +24,4 @@ O projeto está **em desenvolvimento**. Novas funcionalidades e melhorias estão
 
 ---
 
-Feito com ❤️ por [Seu Nome](https://github.com/seu-usuario)
+Feito com ❤️ por [Kawanfr](https://github.com/Kawanfr)
