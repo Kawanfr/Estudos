@@ -21,6 +21,17 @@
     --cor-nav-texto: #f0f0f0;
     --cor-nav-fundo-hover: var(--cor-primaria);
     --cor-nav-borda: #444;
+
+    /* Cores para feedback */
+    --cor-fundo-erro: #ffebee;
+    --cor-fundo-sucesso: #e8f5e9;
+    --cor-texto-secundario: #555;
+
+    /* z-index */
+    --z-index-gallery: 10;
+    --z-index-lightbox: 1000;
+    --z-index-weather: 1001;
+    --z-index-sidenav: 1002;
 }
 
 body.dark-mode {
@@ -36,6 +47,11 @@ body.dark-mode {
     --cor-nav-texto: #f0f0f0;
     --cor-nav-fundo-hover: var(--cor-primaria);
     --cor-nav-borda: #3a3a3a;
+
+    /* Cores para feedback */
+    --cor-fundo-erro: #2c1d1d;
+    --cor-fundo-sucesso: #1e2b20;
+    --cor-texto-secundario: #aaa;
 }
 
 body { 
@@ -132,12 +148,12 @@ form {
 input.input-error,
 textarea.input-error {
     border-color: var(--cor-erro);
-    background-color: #ffebee; /* Mantido por ser específico de erro */
+    background-color: var(--cor-fundo-erro);
 }
 
 .success-message {
     color: var(--cor-sucesso);
-    background-color: #e8f5e9; /* Mantido por ser específico de sucesso */
+    background-color: var(--cor-fundo-sucesso);
     border: 1px solid var(--cor-sucesso);
     padding: 10px;
     border-radius: 5px;
@@ -222,7 +238,7 @@ footer {
 .galeria-imagem:hover {
     transform: scale(1.1);
     position: relative;
-    z-index: 10;
+    z-index: var(--z-index-gallery);
 }
 
 .lightbox-overlay {
@@ -235,7 +251,7 @@ footer {
     display: none;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
+    z-index: var(--z-index-lightbox);
 }
 .lightbox-overlay.active {
     display: flex;
@@ -283,7 +299,7 @@ footer {
     text-align: right;
     margin-top: 15px;
     font-style: italic;
-    color: #555;
+    color: var(--cor-texto-secundario);
 }
 
 .sr-only {
@@ -371,7 +387,7 @@ footer {
     background-color: var(--cor-fundo-form);
     border-radius: 10px;
     box-shadow: 0 4px 8px var(--cor-sombra);
-    z-index: 1001;
+    z-index: var(--z-index-weather);
     font-size: 0.9em;
     color: var(--cor-texto);
     opacity: 0;
@@ -439,7 +455,7 @@ footer {
     height: 100vh;
     background-color: var(--cor-fundo-rodape);
     padding-top: 40px;
-    z-index: 900;
+    z-index: var(--z-index-sidenav);
     box-shadow: 3px 0 8px var(--cor-sombra);
     transform: translateX(0);
     transition: transform 0.3s ease, background-color 0.3s;
