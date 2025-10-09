@@ -73,6 +73,8 @@ header {
     padding: 10px 0;
     text-align: center;
     min-height: 250px;
+    position: relative;
+    z-index: 1;
 }
 
 h1, h2 {
@@ -589,8 +591,13 @@ input:checked + .slider:before {
     align-items: center;
     justify-content: space-between;
     padding: 10px;
-    background-color: #333;
+    background-color: transparent;
     color: white;
+    position: fixed; /* Adicionado para fixar o cabeçalho */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Garante que o cabeçalho fique acima de outros conteúdos */
 }
 
 .hamburger {
@@ -629,6 +636,14 @@ input:checked + .slider:before {
 
     .close-nav {
         display: block;
+    }
+
+    body {
+        padding-top: 60px; /* Adicionado para não esconder o conteúdo atrás do header */
+    }
+
+    header {
+        padding-top: 60px; /* Adicionado para descer a imagem de fundo */
     }
 }
 
