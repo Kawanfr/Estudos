@@ -378,47 +378,6 @@ footer {
     text-decoration: none;
 }
 
-#weather-widget {
-    position: fixed;
-    top: 15px;
-    right: 15px;
-    width: 220px;
-    padding: 15px;
-    background-color: var(--cor-fundo-form);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px var(--cor-sombra);
-    z-index: var(--z-index-weather);
-    font-size: 0.9em;
-    color: var(--cor-texto);
-    opacity: 0;
-    transform: translateY(-30px);
-    display: none;
-    transition: opacity 0.6s cubic-bezier(0.23, 1, 0.32, 1), transform 0.6s cubic-bezier(0.23, 1, 0.32, 1), background-color 0.3s;
-}
-
-#weather-widget.visible {
-    display: block;
-    opacity: 1;
-    transform: translateY(0);
-}
-
-#weather-widget p {
-    display: none;
-}
-
-#weather-widget .weather-info {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-#weather-widget .weather-info img {
-    width: 40px;
-    height: 40px;
-}
-
 @media (max-width: 768px) {
     .galeria-imagem {
         width: calc(50% - 10px);
@@ -430,13 +389,6 @@ footer {
 }
 
 @media (max-width: 480px) {
-    #weather-widget {
-        width: auto;
-        left: 10px;
-        right: 10px;
-        font-size: 0.85em;
-    }
-
     .galeria-imagem {
         width: 100%;
         max-width: none;
